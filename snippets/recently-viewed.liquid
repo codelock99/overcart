@@ -1,0 +1,48 @@
+<script> 
+	var product_ids, product_id, product_page=1, cart_page=0;
+ 	{% if template contains 'product' %}  		
+  		product_id = {{ product.id }};           
+    {% else %}        
+        product_page=0;  
+	{% endif %}
+	{% if template contains 'cart' %}  		
+  		cart_page = 1;           
+    {% else %}        
+        cart_page = 0;  
+	{% endif %}
+	var shop_name = '{{ shop.domain }}';    
+	</script><div id="recent_div_box">
+	<div id="recent_view_js">
+	</div>
+	<div class="col-sm-12 form-group text-center" id="recent_view_slider">
+		<br>
+		<h1 class="preview_title">
+		</h1>
+		<h4 class="preview_subtitle">
+		</h4>						
+		<section class="recently_viewed"> 			
+		</section>
+	</div>
+	<div class="popup" id="recent_view_popup_modal" data-popup="popup-3" style="width:100%;z-index:999999999999999;display:none;top:25%position:absolute;">
+		<div class="popup-inner" id="recent_view_content" style="z-index:999999999999999;height:500px;overflow-y: scroll;">  
+			<div class="container">
+				<div class="col-md-6" style="float:left;width:28%">
+					<img id="recent_view_image" style="height:320px;width:310px" class='product_click' src=''/>				
+				</div>
+				<div id="product_content" class="col-md-6" style="float:right;width:72%">
+					<h2 id="product_name"></h2>              	
+					<h4 id="product_price" style="float:left;width:50%"></h4>
+					<div id="select_variant_div" style="float:left;width:50%"></div> 
+					<br><br>
+					<div class="text-left" id="add_to_cart_button"></div>
+					<br>
+					<h5 id="product_desc"></h5>
+				</div>
+			</div>        	
+			<a class="popup-close" data-popup-close="popup-3" href="#">x</a>
+		</div>
+	</div>
+	{{ 'https://zestardshop.com/shopifyapp/recently-viewed-products/public/css/slick-theme.css' | stylesheet_tag }}	{{ 'https://zestardshop.com/shopifyapp/recently-viewed-products/public/css/slick.css' | stylesheet_tag }}	{{ 'https://zestardshop.com/shopifyapp/recently-viewed-products/public/css/mdb/font-awesome.min.css' | stylesheet_tag  }}	{{ 'https://zestardshop.com/shopifyapp/recently-viewed-products/public/css/custom_modal.css' | stylesheet_tag  }}	{{ 'https://zestardshop.com/shopifyapp/recently-viewed-products/public/css/jquery.modal.min.css'| stylesheet_tag }}	{{ 'https://zestardshop.com/shopifyapp/recently-viewed-products/public/css/style.css' | stylesheet_tag  }}	{{ 'https://zestardshop.com/shopifyapp/recently-viewed-products/public/js/zestard_jquery_3.3.1.js' | script_tag }}	{{ 'https://zestardshop.com/shopifyapp/recently-viewed-products/public/js/jquery-migrate-3.0.1.js' | script_tag }}	{{ 'https://zestardshop.com/shopifyapp/recently-viewed-products/public/js/slick.js' | script_tag }}	{{ 'https://zestardshop.com/shopifyapp/recently-viewed-products/public/js/recent_view.js' | script_tag }}
+</div>
+
+

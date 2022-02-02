@@ -1,0 +1,110 @@
+{%- section 'pages_heading' -%}
+<input checked="checked" id="tab1" type="radio" name="tab" data-tab="tab1" />
+<input id="tab2" type="radio" name="tab" data-tab="tab2" />
+<input id="tab3" type="radio" name="tab" data-tab="tab3" />
+<nav>
+   <label for="tab1" data-tab-label="tab1">View</label>
+   <label for="tab2" data-tab-label="tab2">Edit</label>
+   <label for="tab3" data-tab-label="tab3">Clone</label>
+</nav>
+<section data-tab-panel="tab1">
+   First Tab Panel</br>
+   hello
+   <div id="main-wrapper">
+      <div id="main" class="clearfix">
+         <div id="content" class="column">
+            <div class="section">
+               <h1 class="title">About us</h1>
+               <div id="content-area" class="clearfix">
+                  <div id="node-428" class="node node-type-page build-mode-full clearfix">
+                     <div class="content">
+                        <p style="text-align: justify;"><img src="https://pazzion.g.shopcadacdn.com/sites/files/pazzion/PAZZION_About us_1000px by 400px-02.jpg" alt="" width="1000" height="401"></p>
+                        <p style="text-align: justify;">&nbsp;</p>
+                        <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif; font-size: small;">PAZZION was born in 2002 to cater to the needs of today’s woman, the confident, elegant lady who sets trends with good taste.</span></p>
+                        <p style="text-align: justify;">&nbsp;</p>
+                        <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif; font-size: small;">With an uncompromising standard for taste and quality, we place the utmost emphasis on high-caliber craftsmanship and an unwavering attention to detail, using only the finest calf leather and lambskin for all of our products to ensure it fits well and remain a trusted wardrobe staple.</span></p>
+                        <p style="text-align: justify;">&nbsp;</p>
+                        <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif; font-size: small;">Our design team continually scours the globe, seeking inspiration from anything and everything – art, architecture, culture and history have all been a springboard for some of our past creations. It is very important to us at PAZZION to consistently understand and remain at the forefront of trends. The design of each collection is carefully considered and laboriously debated to both reflect and push the boundaries of the style.</span></p>
+                        <p style="text-align: justify;">&nbsp;</p>
+                        <p style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif; font-size: small;">To date, PAZZION has made significant growth in both the local and international markets. The brand presence can be seen across the Singapore with our flagship stores at Wisma Atria while international presence covers more than 10 countries including Malaysia, Japan, Thailand, China, Vietnam, Philippines, and India.</span></p>
+                        <p style="text-align: justify;">&nbsp;</p>
+                        <p style="text-align: justify;">&nbsp;</p>
+                        <p style="text-align: justify;">&nbsp;</p>
+                     </div>
+                  </div>
+                  <!-- /.node -->
+               </div>
+            </div>
+         </div>
+         <!-- /.section, /#content -->
+      </div>
+   </div>
+</section>
+<section data-tab-panel="tab2">
+   Second Tab Panel
+</section>
+<section data-tab-panel="tab3">
+   Third Tab Panel
+</section>
+<style>
+   :root {
+   --tab-radius: 4px;
+   --tab-background-color: #dcdcdc;
+   --tab-border-color: #c0c0c0;
+   --tab-panel-background: #fff;
+   --tab-spacing: 1rem .5rem;
+   --tab-active-shadow: inset 1px 0 0 var(--tab-border-color), inset -1px 1px 0 var(--tab-border-color), 0 1px 0 white;
+   }
+   /* Preview Needs */
+   * {
+   box-sizing: border-box;
+   }
+   body {
+   padding: 2vw;
+   }
+   /* Tabs Defaults */
+   [data-tab] {
+   display: none;
+   }
+   [data-tab-panel] {
+   opacity: 0;
+   background-color: var(--tab-panel-background);
+   transition: opacity .3s ease-in-out;
+   visibility: hidden;
+   height: 0;
+   position: relative;
+   z-index: 1;
+   }
+   [data-tab-label] {
+   padding: var(--tab-spacing);
+   display: inline-block;
+   background-color: var(--tab-background-color);
+   cursor: pointer;
+   position: relative;
+   bottom: -1px;
+   border-top-left-radius: var(--tab-radius, 0);
+   border-top-right-radius: var(--tab-radius, 0);
+   }
+   [data-tab-label]:hover {
+   --tab-background-color: #c0c0c0;
+   }
+   /* Tab Label Active State */
+   [data-tab="tab1"]:checked ~ nav [data-tab-label="tab1"],
+   [data-tab="tab2"]:checked ~ nav [data-tab-label="tab2"],
+   [data-tab="tab3"]:checked ~ nav [data-tab-label="tab3"] {
+   --tab-background-color: #fff;
+   box-shadow: var(--tab-active-shadow);
+   z-index: 10;
+   }
+   /* Tab Panel Active State */
+   [data-tab="tab1"]:checked ~ nav ~ [data-tab-panel="tab1"],
+   [data-tab="tab2"]:checked ~ nav ~ [data-tab-panel="tab2"],
+   [data-tab="tab3"]:checked ~ nav ~ [data-tab-panel="tab3"] {
+   opacity: 1;
+   visibility: visible;
+   padding: var(--tab-spacing);
+   border: 1px solid var(--tab-border-color);
+   width: 100%;
+   height: auto;
+   }
+</style>
